@@ -14,14 +14,14 @@ export default new Router({
       path: '/',
       component: MainLayout,
       redirect: { name: 'home' },
-      // children: [
-      //   require('./views/Home/router').default,
-      //   require('./views/Market/router').default,
-      //   require('./views/Channel/router').default,
-      //   require('./views/Transport/router').default,
-      //   require('./views/Customer/router').default,
-      //   require('./views/Management/router').default,
-      // ],
+      children: [
+        require('./views/Home/router').default,
+        // require('./views/Market/router').default,
+        // require('./views/Channel/router').default,
+        // require('./views/Transport/router').default,
+        // require('./views/Customer/router').default,
+        // require('./views/Management/router').default,
+      ],
     },
     {
       path: '/login',

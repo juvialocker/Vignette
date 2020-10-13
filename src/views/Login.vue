@@ -124,10 +124,10 @@ export default {
       // }
     },
     handleSubmit() {
-      this.$Message.error("你还没有创建新的页面哟!")
-      // this.$router.push({
-      //   name: "home"
-      // });
+      // this.$Message.error("你还没有创建新的页面哟!")
+      this.$router.push({
+        name: "home"
+      });
       // this.$refs.formInline.validate(valid => {
       //   if (valid) {
       //     let params = {};
