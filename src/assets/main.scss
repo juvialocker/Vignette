@@ -1,13 +1,7 @@
-$primary:#CC302D;
+$primary: #cc302d;
 
-//menu
-// .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active{
-//   color:$primary;
-//   border-bottom:2px solid $primary;
-// }
-
-// 修改实物兑奖预览图片
-.viewer-canvas img{
+// 预览图片样式
+.viewer-canvas img {
   // transform: scale(0.7) rotate(0deg) !important;
   width: 800px !important;
   height: auto !important;
@@ -20,7 +14,7 @@ $primary:#CC302D;
   bottom: 0 !important;
   margin: auto !important;
 }
-.manage .ivu-table-wrapper table img{
+.manage .ivu-table-wrapper table img {
   width: 52px;
   height: 52px;
 }
@@ -32,12 +26,12 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.new-agent .ivu-form-item-content{
+.new-agent .ivu-form-item-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-body{
+body {
   overflow: auto;
   width: 100%;
 }
@@ -57,50 +51,19 @@ body{
   margin-top: 0 !important;
 }
 
-.allBtn {
-  width: 100px;
-  height: 36px;
-  background: linear-gradient(90deg, rgba(232, 94, 89, 1) 0%, rgba(204, 48, 45, 1) 100%);
-  border-radius: 18px;
-  color: #fff;
-  padding: 11px 36px;
-  // margin-left: 20px;
-  cursor: pointer;
-}
-
-.cash .ivu-select-selection,
-.metter .ivu-select-selection,
-.amountDetail .ivu-select-selection,
-.toolheader .ivu-select-selection,
-.toolbar .ivu-select-selection,
-.fenceTime .ivu-select-selection,
-#stock .ivu-select-selection {
-  height: 36px;
+.ivu-select-selection {
+  height: 36px !important;
   text-align: center;
   // line-height: 36px;
 }
 
-.cash .ivu-select-input,
-.metter .ivu-select-input,
-.amountDetail .ivu-select-input,
-.toolheader .ivu-select-input,
-.toolbar .ivu-select-input,
-.fenceTime .ivu-select-input,
-#stock .ivu-select-input {
+.ivu-select-input {
   height: 36px;
-  padding: 0 18px;
+  padding: 0 18px !important;
 }
 
-.amountDetail .ivu-select-placeholder,
-.amountDetail .ivu-select-selected-value,
-.toolheader .ivu-select-placeholder,
-.toolheader .ivu-select-selected-value,
-.toolbar .ivu-select-placeholder,
-.toolbar .ivu-select-selected-value,
-.fenceTime .ivu-select-placeholder,
-.fenceTime .ivu-select-selected-value,
-#stock .ivu-select-placeholder,
-#stock .ivu-select-selected-value {
+.ivu-select-placeholder,
+.ivu-select-selected-value {
   text-align: left !important;
   height: 36px !important;
   line-height: 36px !important;
@@ -108,7 +71,7 @@ body{
 }
 
 .ivu-layout-content {
-  >.ivu-layout {
+  > .ivu-layout {
     height: 100%;
   }
 
@@ -136,14 +99,6 @@ body{
   margin: 0 20px;
   padding: 0;
 }
-
-// .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after{
-//   background:$primary
-// }
-// .ivu-menu-vertical .ivu-menu-item:hover{
-//   color:$primary
-// }
-
 
 .container-content {
   margin: 0 30px 30px 30px;
@@ -188,24 +143,20 @@ body{
 }
 
 .ivu-table {
-
   &::before,
   &::after {
     display: none;
   }
 }
 
-
 .ivu-layout-content .ivu-layout-sider-children {
   border-top-right-radius: 6px;
 }
-
 
 //pagination
 .ivu-page {
   margin: 10px;
 }
-
 
 .ok {
   width: 88px;
@@ -224,9 +175,6 @@ body{
   border-radius: 18px;
 }
 
-// .ivu-input,.ivu-input-default{
-//   border-radius: 18px;
-// }
 .ivu-select-visible .ivu-select-selection {
   box-shadow: 0 0 0 2px rgba(209, 76, 43, 0.2);
 }
@@ -235,7 +183,6 @@ body{
   outline: 0;
   box-shadow: 0 0 0 2px rgba(209, 76, 43, 0.2);
 }
-
 
 //table
 .ivu-table {
@@ -261,7 +208,7 @@ body{
   }
 
   .ivu-page-item-active {
-    background: #CC302D;
+    background: #cc302d;
     border: none;
 
     a {
@@ -272,28 +219,22 @@ body{
   .ivu-page-prev {
     width: 58px;
     margin-right: 10px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
     border-radius: 14px;
   }
 
   .ivu-page-next {
     width: 58px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
     border-radius: 14px;
   }
 }
 
-
-//tabs
-// .ivu-tabs-nav .ivu-tabs-tab-active{
-//   color:$primary;
-// }
 .ivu-tabs-bar {
   border: none;
 }
 
 .ivu-tabs-ink-bar {
-  // background-color:#CC302D;
   left: 20px;
   width: 20px !important;
 }
@@ -323,7 +264,6 @@ body{
   color: #fff;
 }
 
-
 //loading
 .ivu-spin-dot {
   background-color: rgb(94, 68, 67);
@@ -340,7 +280,7 @@ body{
   cursor: pointer;
 }
 
-// 金额明细切换
+// 标签页切换
 .ivu-tabs-nav .ivu-tabs-tab-active {
   width: 100px;
   height: 36px;
@@ -367,11 +307,8 @@ th .ivu-table-cell {
   display: block !important;
 }
 
-// // 选择器样式
-// .amountDetail .ivu-select-single .ivu-select-selection .ivu-select-placeholder{
-//   color: rgba(51,51,51,1);
-// }
-@media screen and (min-width:1366px) {}
+@media screen and (min-width: 1366px) {
+}
 
 .vertical-center-modal {
   display: flex;
@@ -393,5 +330,5 @@ th .ivu-table-cell {
   }
 }
 
-
-@media screen and (min-width:1366px) {}
+@media screen and (min-width: 1366px) {
+}
