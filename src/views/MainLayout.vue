@@ -9,21 +9,21 @@
           <MenuItem name="home" to="/home">
               | 首页
           </MenuItem>
-          <MenuItem name="market" to="/market">
-              | 营销
-          </MenuItem>
-          <MenuItem name="channel" to="/channel">
-              | 渠道
-          </MenuItem>
-          //- <MenuItem name="transport" to="/transport">
-          //-     | 运输
+          //- <MenuItem name="market" to="/market">
+          //-     | 营销
           //- </MenuItem>
-          <MenuItem name="customer" to="/customer">
-              | 消费者
-          </MenuItem>
-          //- <MenuItem name="management" to="/management">
-          //-     | 人员管理
+          //- <MenuItem name="channel" to="/channel">
+          //-     | 渠道
           //- </MenuItem>
+          //- //- <MenuItem name="transport" to="/transport">
+          //- //-     | 运输
+          //- //- </MenuItem>
+          //- <MenuItem name="customer" to="/customer">
+          //-     | 消费者
+          //- </MenuItem>
+          <MenuItem name="management" to="/management">
+              | 人员管理
+          </MenuItem>
         </div>
         <div class="avatar">
           <Dropdown placement="bottom-end">

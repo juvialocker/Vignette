@@ -26,5 +26,6 @@ export default class Container extends Vue {
 <style lang="scss" scoped>
 .container-content-keep {
   min-width: 1035px;
+  padding: 5px 20px 20px;
 }
 </style>

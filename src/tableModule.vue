@@ -55,9 +55,30 @@ import { API_URL_IMG } from "@/config";
 export default class module extends Vue {
   // 用于接收参数
   // @Prop() public readonly title!: string;
+  // 表头显示省略号
+  public tableHeader(h: any, params: any) {
+    let text = params.column.title;
+    return h(
+      "div",
+      {
+        style: {
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          textOverflow: "ellipsis",
+        },
+        attrs: {
+          title: text,
+        },
+      },
+      text
+    );
+  }
   // 表格-->
   private loading: boolean = false;
-  private tableData: Array<any> = [];
+  private tableData: Array<any> = [
+    {index:1},
+    {index:1},
+  ];
   private col: any[] = [
     {
       title: "序号",
@@ -68,112 +89,41 @@ export default class module extends Vue {
       },
     },
     {
-      title: "主题名称",
-      key: "topicName",
+      title: "经销商编号",
+      key: "index",
       tooltip: true,
     },
     {
-      title: "描述",
-      key: "presentation",
+      title: "经销商名称",
+      key: "index",
       tooltip: true,
     },
     {
-      title: "图片",
-      key: "image",
-      render: (h: any, params: any) => {
-        let text = API_URL_IMG + params.row.image;
-        return h(
-          "vue-viewer",
-          {
-            attrs: {
-              thumb: text,
-              full: text,
-            },
-            style: {
-              width: "20px",
-              height: "20px",
-            },
-          },
-          text
-        );
-      },
-    },
-    {
-      title: "状态",
-      key: "inUse",
-      tooltip: true,
-      render: (h: any, params: any) => {
-        let text: string = "未使用";
-        let colors: string = "#333";
-        if (params.row.inUse) {
-          text = "使用中";
-          colors = "red";
-        } else {
-          text = "未使用";
-          colors = "#333";
-        }
-        return h(
-          "div",
-          {
-            style: {
-              color: colors,
-            },
-          },
-          text
-        );
-      },
-    },
-    {
-      title: "备注",
-      key: "remark",
+      title: "奖项编号",
+      key: "index",
       tooltip: true,
     },
     {
-      title: "操作",
-      key: "id",
-      width: 140,
-      render: (h: any, params: any) => {
-        return h("div", [
-          h("Button", {
-            style: {},
-            props: {
-              type: "text",
-              size: "small",
-              customIcon: "iconfont iconcheck",
-            },
-            on: {
-              click: () => {
-                this.check(params.row);
-              },
-            },
-          }),
-          h("Button", {
-            style: {},
-            props: {
-              type: "text",
-              size: "small",
-              customIcon: "iconfont icondelete",
-            },
-            on: {
-              click: () => {
-                this.dele_home(params.row);
-              },
-            },
-          }),
-          h("Button", {
-            style: {},
-            props: {
-              type: "text",
-              size: "small",
-              customIcon: "iconfont iconstart",
-            },
-            on: {
-              click: () => {
-                this.start_home(params.row);
-              },
-            },
-          }),
-        ]);
+      title: "奖项名称",
+      key: "index",
+      tooltip: true,
+    },
+    {
+      title: "奖项类型",
+      key: "index",
+      tooltip: true,
+    },
+    {
+      title: "奖项数量",
+      key: "index",
+      tooltip: true,
+    },
+    {
+      title: "总兑付金额（元）",
+      key: "index",
+      tooltip: true,
+      renderHeader: (h, params) => {
+        return this.tableHeader(h, params);
       },
     },
   ];
@@ -183,9 +133,10 @@ export default class module extends Vue {
   private pageNum: number = 0;
   private pageChange(c: number) {
     this.pageNum = c - 1;
-    this.search_home();
+    // this.search_home();
   }
   // 表格<--
+
   // 搜索-->
   // 日期
   private dateRange: Array<any> = ["", ""];
@@ -201,7 +152,7 @@ export default class module extends Vue {
     this.pageNum = 0;
     this.search_home();
   }
-  // 搜索酒卡列表
+  // 搜索列表
   private search_home() {
     let params: any = {
       pageSize: this.pageSize,
@@ -303,6 +254,7 @@ export default class module extends Vue {
     if (this.type === "del") {
       service.removeTable(params).then(({ data }) => {
         if (data.code == 200) {
+          //计算是否删除的是表格最后一页的最后一条数据
           if (this.total % this.pageSize === 1 && this.pageNum !== 0) {
             this.pageNum = this.pageNum - 1;
           }
