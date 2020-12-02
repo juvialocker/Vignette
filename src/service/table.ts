@@ -21,3 +21,12 @@ export const startTable= (data: any)=> {
   return axiosInstance.post(`/api/public/sendMessage`,data);
 };
 
+// 库存导出
+export const exportStock = (params: any) => {
+  return axiosInstance({
+    url: `/api/admin/stockExport`,
+    data: params,
+    method: 'post',
+    responseType: 'blob', // 设置响应数据类型为 blob
+  });
+};
