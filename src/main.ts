@@ -10,6 +10,10 @@ import '@/assets/iconfont/iconfont.css';
 import '@/theme/index.less';
 import '@/assets/main.scss';
 import ImageViewer from 'vue2-viewer';
+import 'amfe-flexible/index'
+import rewirteLog from "@/rewirteLog"
+Vue.use(rewirteLog);
+
 Vue.use(ImageViewer);
 Vue.use(iView);
 
